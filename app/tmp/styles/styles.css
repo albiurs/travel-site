@@ -1,12 +1,11 @@
-$mainBlue: #2f5572;
-
 html {
   background: red;
 }
 
 body {
-  color: $mainBlue;
+  color: #2f5572;
   padding: 25px;
   marging: 10px;
-  columns: 300px 2;
+  -moz-columns: 300px 2;
+       columns: 300px 2;
 }

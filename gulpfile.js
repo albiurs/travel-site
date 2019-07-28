@@ -2,7 +2,10 @@
  * import Gulp and Gulp-plugins
  */
 var gulp = require('gulp');
-//var cleanCSS = require('gulp-clean-css');
+//var cleanCSS = require('gulp-clean-css'); clean and minify css files
+var postcss = require('gulp-postcss'); // auto-postprocessing of css code
+var autoprefixer = require('autoprefixer'); // prefix css to vendor/browser specific css prefixes
+var cssvars = require('postcss-simple-vars'); // support variables ins css files and convert to standard css code
 
 
 
@@ -30,7 +33,9 @@ function process_html(done) {
 //  done();
 //};
 function process_css(done) {
-  console.log("Imagine Sass or PostCSS Files running here...");
+  return gulp.src('./app/assets/styles/styles.css')
+    .pipe(postcss([cssvars, autoprefixer]))
+    .pipe(gulp.dest('./app/tmp/styles'));
   done();
 };
 

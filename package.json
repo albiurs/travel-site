@@ -21,6 +21,9 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "autoprefixer": "^9.6.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "postcss-simple-vars": "^5.0.2"
   }
 }
