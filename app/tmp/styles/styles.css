@@ -1,11 +1,1 @@
-html {
-  background: red;
-}
-
-body {
-  color: #2f5572;
-  padding: 25px;
-  marging: 10px;
-  -moz-columns: 300px 2;
-       columns: 300px 2;
-}
+html{background:red}body{color:#2f5572;padding:25px;marging:10px;-moz-columns:300px 2;columns:300px 2}.box a{display:block;padding:10px}

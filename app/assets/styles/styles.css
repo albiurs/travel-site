@@ -1,12 +1,20 @@
 $mainBlue: #2f5572;
 
 html {
-  background: red;
+	background: red;
 }
 
 body {
-  color: $mainBlue;
-  padding: 25px;
-  marging: 10px;
-  columns: 300px 2;
+	color: $mainBlue;
+	padding: 25px;
+	marging: 10px;
+	columns: 300px 2;
+}
+
+
+.box {
+	a {
+		display: block;
+		padding: 10px;
+	}
 }
