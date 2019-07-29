@@ -7,6 +7,7 @@ var autoprefixer = require('autoprefixer'); // prefix css to vendor/browser spec
 var cssvars = require('postcss-simple-vars'); // support variables ins css files and convert to standard css code
 var nested = require('postcss-nested'); // support nested commands in css files and convert to standard css code
 var cleanCSS = require('gulp-clean-css'); // clean and minify css files
+var cssImport = require('postcss-import'); // import multiple css files into one
 
 
 
@@ -28,7 +29,7 @@ function process_html(done) {
 // process css files
 function process_css(done) {
 	return gulp.src('./app/assets/styles/styles.css')
-		.pipe(postcss([cssvars, nested, autoprefixer]))
+		.pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('./app/tmp/styles'));
 	done();
