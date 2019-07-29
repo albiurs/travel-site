@@ -30,7 +30,7 @@ function process_html(done) {
 function process_css(done) {
 	return gulp.src('./app/assets/styles/styles.css')
 		.pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
-		.pipe(cleanCSS())
+		//.pipe(cleanCSS())
 		.pipe(gulp.dest('./app/tmp/styles'));
 	done();
 };
