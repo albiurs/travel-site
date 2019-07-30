@@ -18,6 +18,10 @@ var cssImport = require('postcss-import'); // import multiple css files into one
 function process_css(done) {
 	return gulp.src('./app/assets/styles/styles.css')
 		.pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
+		.on('error', function(errorInfo) {
+			console.log(errorInfo.toString()); // output of errors
+			this.emit('end'); // continue watching, even if an error happens
+		})
 		//.pipe(cleanCSS())
 		.pipe(gulp.dest('./app/tmp/styles'));
 	done();
