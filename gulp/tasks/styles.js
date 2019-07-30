@@ -8,6 +8,7 @@ var cssvars = require('postcss-simple-vars'); // support variables ins css files
 var nested = require('postcss-nested'); // support nested commands in css files and convert to standard css code
 var cleanCSS = require('gulp-clean-css'); // clean and minify css files
 var cssImport = require('postcss-import'); // import multiple css files into one
+var mixins = require('postcss-mixins'); // reliable handling of media queries
 
 
 
@@ -17,7 +18,7 @@ var cssImport = require('postcss-import'); // import multiple css files into one
 // process css files
 function process_css(done) {
 	return gulp.src('./app/assets/styles/styles.css')
-		.pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
+		.pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
 		.on('error', function(errorInfo) {
 			console.log(errorInfo.toString()); // output of errors
 			this.emit('end'); // continue watching, even if an error happens
