@@ -359,6 +359,19 @@ img {
 	height: auto;
 }
 
+* {
+	/* gutter padding won't apply the column with to avoid break of boxes sum > 100% of the width */
+	box-sizing: border-box;
+}
+
+/* small media query */
+
+/* medium media query */
+
+/* large media query */
+
+/* add blank content after to clear floating */
+
 .large-hero {
 	border-bottom: 10px solid #1f5572;
 	position: relative;
@@ -450,6 +463,8 @@ img {
 		}
 
 .wrapper {
+	/* hide overflow of negative row right-padding */
+	overflow: hidden;
 	padding-left: 18px;
 	padding-right: 18px;
 	max-width: 1200px;
@@ -458,7 +473,7 @@ img {
 
 }
 
-/* any wrapper inside a wrapper on mobile */
+/* remove double padding in any wrapper inside a wrapper */
 
 .wrapper .wrapper {
 		padding-left: 0;
@@ -532,4 +547,30 @@ img {
 
 .headline--b-margin-large {
 		margin-bottom: 1.6em;
+	}
+
+.row::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+.row--gutters {
+		margin-right: -65px;
+	}
+
+.row--gutters > div {
+		padding-right: 65px;
+	}
+
+@media (min-width: 800px) {
+		.row__medium-4 {
+			float: left;
+			width: 33.33%;
+		}
+
+		.row__medium-8 {
+			float: left;
+			width: 66.66%;
+		}
 	}
