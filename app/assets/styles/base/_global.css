@@ -13,3 +13,7 @@ gutter padding won't apply the column with to avoid break of boxes if the total 
 * {
 	box-sizing: border-box;
 }
+
+a {
+	color: $mainOrange;
+}
