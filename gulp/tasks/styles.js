@@ -23,7 +23,7 @@ function process_css(done) {
 			console.log(errorInfo.toString()); // output of errors
 			this.emit('end'); // continue watching, even if an error happens
 		})
-		//.pipe(cleanCSS())
+		.pipe(cleanCSS())
 		.pipe(gulp.dest('./app/tmp/styles'));
 	done();
 };

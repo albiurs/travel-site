@@ -8,7 +8,8 @@ img {
 	height: auto;
 }
 
+/* apply to each element (*):
+gutter padding won't apply the column with to avoid break of boxes if the total column width is > 100% */
 * {
-	/* gutter padding won't apply the column with to avoid break of boxes sum > 100% of the width */
 	box-sizing: border-box;
 }
