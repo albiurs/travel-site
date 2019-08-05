@@ -17,20 +17,19 @@ function process_browserSync() {
 			baseDir: "./app/"
 		}
 	});
-};
+}
 
 // browser-sync CSS inject
-function process_cssInject(done) {
+function process_cssInject() {
 	return gulp.src('./app/tmp/styles/styles.css')
 		.pipe(browserSync.stream());
-	done();
-};
+}
 
 //process html files
 function process_html(done) {
 	browserSync.reload();
 	done();
-};
+}
 
 // process css
 function process_css(done) {
@@ -43,7 +42,7 @@ function process_watch() {
 	process_browserSync();
 	gulp.watch('./app/**/*.html', process_html);
 	gulp.watch('./app/assets/styles/**/*.css', gulp.series(process_css, process_cssInject));
-};
+}
 
 
 
