@@ -16,17 +16,16 @@ var mixins = require('postcss-mixins'); // reliable handling of media queries
  * define functions
  */
 // process css files
-function process_css(done) {
+function process_css() {
 	return gulp.src('./app/assets/styles/styles.css')
 		.pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
 		.on('error', function(errorInfo) {
 			console.log(errorInfo.toString()); // output of errors
 			this.emit('end'); // continue watching, even if an error happens
 		})
-		.pipe(cleanCSS())
+		//.pipe(cleanCSS())
 		.pipe(gulp.dest('./app/tmp/styles'));
-	done();
-};
+}
 
 
 

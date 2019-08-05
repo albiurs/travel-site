@@ -22,7 +22,7 @@ require('./gulp/tasks/watch');
 function process_console_out(done) {
 	console.log("Start watching, happy coding!");
 	done();
-};
+}
 
 // process watch
 function process_watch(done) {
