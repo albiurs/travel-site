@@ -9,6 +9,7 @@
 
 	&__text-content {
 		position: absolute;
+		padding-top: 88px;
 		/*center vertically*/
 		top: 50%;
 		transform: translateY(-50%);
@@ -16,6 +17,10 @@
 		/*center text hirzontally*/
 		width: 100%;
 		text-align: center;
+
+		@mixin atMedium{
+			padding-top: 50px;
+		}
 	}
 
 	&__title {

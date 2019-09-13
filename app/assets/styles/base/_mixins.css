@@ -19,7 +19,7 @@
 	}
 }
 
-/* add blank content after to clear floating */
+/* add blank content after to clear floating of the parent elment to float children after */
 @define-mixin clearfix {
 	&::after {
 		content: "";
